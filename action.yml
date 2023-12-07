@@ -7,15 +7,6 @@ inputs:
   GITHUB_TOKEN:
     description: 'GitHub token'
     required: true
-  TRIGGER_ID:
-    description: 'Miqa test trigger ID'
-    required: true
-  DOCKER_URI:
-    description: 'Docker URI for version to test on'
-    required: true
-  MIQA_ENDPOINT:
-    description: 'Root URL for Miqa (proxy or app domain)'
-    required: true
   CHECK_NAME:
     description: 'Name to display in checks status'
     default: 'Triggered Miqa Test'
@@ -23,14 +14,6 @@ inputs:
     description: 'github.sha'
   REPOSITORY:
     description: 'github.repository'
-  COMPONENT_IDS:
-    description: 'Specific component IDs to update (if docker is not registered to component watchers)'
-    required: false
-    default: ''
-  ADDITIONAL_INSTRUCTIONS:
-    description: 'Additional custom instructions to pass as query parameters to the trigger. Prefix with &.'
-    required: false
-    default: ''
   MIQA_GITHUB_APP:
     description: 'Base URL for Miqa GitHub App'
     required: false
