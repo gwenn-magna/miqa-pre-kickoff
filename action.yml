@@ -74,7 +74,7 @@ runs:
         run: |
           echo  "CHECK_RUN_ID=${{ fromJSON(fromJSON(toJSON(steps.trigger_1.outputs.response))).id }}" >> $GITHUB_ENV
       - name: Return all info
-        uses: bash
+        shell: bash
         id: return_all_info
         run: |
           echo "${{ env.CHECK_RUN_ID }}"
