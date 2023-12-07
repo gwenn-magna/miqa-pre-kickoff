@@ -37,6 +37,8 @@ inputs:
     default: 'http://miqa-github.herokuapp.com'
 runs:
   using: "composite"
+  outputs:
+      CHECK_RUN_ID: ${{ steps.return_all_info.outputs.CHECK_RUN_ID }}
   steps:
       - name: Fetch commit SHA
         id: fetch_sha
@@ -77,4 +79,4 @@ runs:
         shell: bash
         id: return_all_info
         run: |
-          echo "${{ env.CHECK_RUN_ID }}"
+          echo "CHECK_RUN_ID=${{ env.CHECK_RUN_ID }}" >> "$GITHUB_OUTPUT"
