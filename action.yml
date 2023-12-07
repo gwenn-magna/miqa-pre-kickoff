@@ -35,10 +35,12 @@ inputs:
     description: 'Base URL for Miqa GitHub App'
     required: false
     default: 'http://miqa-github.herokuapp.com'
+outputs:
+  CHECK_RUN_ID:
+    description: "Check run ID to pass to Miqa trigger"
+    value: ${{ steps.return_all_info.outputs.CHECK_RUN_ID }}
 runs:
   using: "composite"
-  outputs:
-      CHECK_RUN_ID: ${{ steps.return_all_info.outputs.CHECK_RUN_ID }}
   steps:
       - name: Fetch commit SHA
         id: fetch_sha
